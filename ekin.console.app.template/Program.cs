@@ -78,7 +78,10 @@ namespace ekin.console.app.template
 
         static void AddSections(IServiceCollection serviceCollection, IConfiguration config)
         {
-            // serviceCollection.Configure<#someconfig#>(config.GetSection(nameof(#someconfig#));
+            serviceCollection.Configure<GeneralApplicationConfig>(t =>
+            {
+                config.GetSection(nameof(GeneralApplicationConfig));
+            });
         }
 
 
